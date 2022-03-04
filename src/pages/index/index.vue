@@ -4,6 +4,10 @@
 		<view>
 			<text class="title">{{title}}</text>
 		</view>
+		<view>
+			<view>Count {{ count }}</view>
+			<my-btn @click.native.stop="handleClick" />
+		</view>
 	</view>
 </template>
 
@@ -11,14 +15,17 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				count: 0,
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-
+			handleClick() {
+				this.count += 1;
+			},
 		}
 	}
 </script>
